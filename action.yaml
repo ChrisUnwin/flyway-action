@@ -18,7 +18,7 @@ inputs:
     required: true
     default: filesystem:./sql
   command:
-    description: Which of the Flyway commands you would like Flyway to run (Migrate, Clean, Validate etc.)
+    description: Which of the Flyway commands you would like Flyway to run
     required: true
     default: migrate
 runs:
