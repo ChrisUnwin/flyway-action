@@ -1,7 +1,6 @@
-name: Flyway Migration
+name: Flyway Pipeline Action
 description: Migrate database in Github Action using latest Flyway Docker Container
 branding:
-  color: red
   icon: database
 inputs:
   url:
