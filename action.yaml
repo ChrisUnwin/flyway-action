@@ -1,5 +1,5 @@
 name: Flyway Migration
-description: Migrate database in Github Action
+description: Migrate database in Github Action using latest Flyway Docker Container
 branding:
   color: red
   icon: database
@@ -17,14 +17,18 @@ inputs:
     description: Comma-separated list of locations to scan recursively for migrations
     required: true
     default: filesystem:./sql
+  command:
+    description: Which of the Flyway commands you would like Flyway to run (Migrate, Clean, Validate etc.)
+    required: true
+    default: migrate
 runs:
   using: docker
-  image: docker://flyway/flyway:8
+  image: docker://flyway/flyway:latest-alpine
   env:
     FLYWAY_URL: ${{ inputs.url }}
     FLYWAY_USER: ${{ inputs.user }}
     FLYWAY_PASSWORD: ${{ inputs.password }}
     FLYWAY_LOCATIONS: ${{ inputs.locations }}
   args:
-    - migrate
+    - ${{ inputs.command }}
     
