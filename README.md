@@ -28,6 +28,7 @@ jobs:
           url: jdbc:postgresql://postgres:5432/postgres
           user: postgres
           password: postgres
+          command: migrate
       - run: echo 'testing'
 ```
 
