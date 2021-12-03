@@ -23,7 +23,7 @@ inputs:
     default: migrate
 runs:
   using: docker
-  image: docker://flyway/flyway:latest-alpine
+  image: docker://flyway/flyway:8
   env:
     FLYWAY_URL: ${{ inputs.url }}
     FLYWAY_USER: ${{ inputs.user }}
