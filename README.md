@@ -32,7 +32,7 @@ jobs:
       - run: echo 'testing'
 ```
 
-Currently, it supports `url`, `user`, `password`, and `locations`. `locations` are default to `filesystem:./sql`.
+Currently, it supports `url`, `user`, `password`, `locations` and `command`. `locations` are default to `filesystem:./sql` and `command` is set to `migrate`.
 
 For details, please check out Flyway [documentation].
 
