@@ -1,4 +1,4 @@
-# Flyway Action
+# Flyway Pipeline Action
 
 This action runs [Flyway latest][flyway] to migrate database. It aims to migrate database for testing in workflows.
 
