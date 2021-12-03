@@ -11,16 +11,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: postgres
-        env:
-          POSTGRES_PASSWORD: postgres
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
+    
     steps:
       - uses: actions/checkout@v2
       - uses: joshuaavalon/flyway-action@v1
@@ -38,3 +29,4 @@ For details, please check out Flyway [documentation].
 
 [flyway]: https://flywaydb.org/
 [documentation]: https://flywaydb.org/documentation/configuration/parameters/
+Thanks to joshuaavalon for the initial version
