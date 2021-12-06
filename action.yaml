@@ -32,5 +32,6 @@ runs:
     FLYWAY_PASSWORD: ${{ inputs.password }}
     FLYWAY_LOCATIONS: ${{ inputs.locations }}
   args:
-    - ${{ inputs.command }} ${{ inputs.otherargs }}
+    - ${{ inputs.command }} 
+    - ${{ inputs.otherargs }}
     
