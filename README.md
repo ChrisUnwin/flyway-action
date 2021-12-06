@@ -14,7 +14,7 @@ jobs:
     
     steps:
       - uses: actions/checkout@v2
-      - uses: joshuaavalon/flyway-action@v1
+      - uses: ChrisUnwin/flyway-action@v3
         with:
           url: jdbc:postgresql://postgres:5432/postgres
           user: postgres
