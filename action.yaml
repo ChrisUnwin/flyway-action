@@ -20,6 +20,9 @@ inputs:
     description: Which of the Flyway commands you would like Flyway to run
     required: true
     default: migrate
+  otherargs:
+    description: Are there any other Flyway switches youd like to pass?
+    required: false
 runs:
   using: docker
   image: docker://flyway/flyway:8
@@ -29,5 +32,5 @@ runs:
     FLYWAY_PASSWORD: ${{ inputs.password }}
     FLYWAY_LOCATIONS: ${{ inputs.locations }}
   args:
-    - ${{ inputs.command }}
+    - ${{ inputs.command }} ${{ inputs.otherargs }}
     
