@@ -20,19 +20,28 @@ inputs:
     description: Which of the Flyway commands you would like Flyway to run
     required: true
     default: migrate
-  otherargs:
-    description: Are there any other Flyway switches youd like to pass?
+  disableclean:
+    description: Would you like clean disabled (true or false)
     required: false
-    default: -cleanDisabled=false
+    default: false
+  baselineonmigrate:
+    description: Would you like to baseline on migrate (true or false)
+    required: false
+    default: false
+  baselineversion:
+    description: What is your baseline version
+    required: false
+    default: 0.0
 runs:
   using: docker
-  image: docker://flyway/flyway:8
+  image: docker://flyway/flyway:latest-alpine
   env:
     FLYWAY_URL: ${{ inputs.url }}
     FLYWAY_USER: ${{ inputs.user }}
     FLYWAY_PASSWORD: ${{ inputs.password }}
     FLYWAY_LOCATIONS: ${{ inputs.locations }}
+    FLYWAY_CLEAN_DISABLED: ${{ inputs.disableclean }}
+    FLYWAY_BASELINE_ON_MIGRATE: ${{ inputs.baselineonmigrate }}
+    FLYWAY_BASELINE_VERSION: ${{ inputs.baselineversion }}
   args:
     - ${{ inputs.command }} 
-    - ${{ inputs.otherargs }}
-    
