@@ -23,6 +23,7 @@ inputs:
   otherargs:
     description: Are there any other Flyway switches youd like to pass?
     required: false
+    default: -cleanDisabled=false
 runs:
   using: docker
   image: docker://flyway/flyway:8
