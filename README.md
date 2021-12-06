@@ -20,13 +20,19 @@ jobs:
           user: postgres
           password: postgres
           command: migrate
+          disableclean: false
+          baselineonmigrate: false
+          baselineversion: 001
       - run: echo 'testing'
 ```
 
-Currently, it supports `url`, `user`, `password`, `locations` and `command`. `locations` are default to `filesystem:./sql` and `command` is set to `migrate`.
+Currently, it supports `url`, `user`, `password`, `locations`, `baselineonmigrate`, `baselineversion`, `disableclean` and `command`. 
+
+Defaults: `locations` is set to `filesystem:./sql`, `command` is set to `migrate`, `disableclean` is set to `false`, `baselineonmigrate` is set to `false` and `baselineversion` is set to `0.0`
 
 For details, please check out Flyway [documentation].
 
 [flyway]: https://flywaydb.org/
 [documentation]: https://flywaydb.org/documentation/configuration/parameters/
-Thanks to joshuaavalon for the initial version
+
+Thanks to joshuaavalon for the initial version, which I forked for the purposes of a blog post.
